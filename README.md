@@ -1,13 +1,12 @@
-# paper-autocomplete
+# rich-editor
 
-paper-autocomplete extends earlier efforts such as this https://github.com/rodo1111/paper-input-autocomplete to provide keyboard support, remote binding and
-results scrolling.
+A material design web component encapsulation of the tiny-mce inline editor.
 
 # Installation
 
 ``` bash
 
-bower install paper-autocomplete
+bower install rich-editor
 
 ```
 
@@ -15,13 +14,13 @@ bower install paper-autocomplete
 
 ```html
 
-<link rel="import" href="bower_components/paper-autocomplete/paper-autocomplete.html">
+<link rel="import" href="bower_components/rich-editor/rich-editor.html">
 
-<paper-autocomplete id="my-id" label="Select"></paper-autocomplete>
+<rich-editor>
+ Edit content here...
+</rich-editor>
 
 ```
 
-# Demo and Docs
 
-http://ellipticaljs.github.io/paper-autocomplete/
 
