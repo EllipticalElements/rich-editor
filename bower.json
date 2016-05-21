@@ -1,0 +1,46 @@
+{
+  "name": "rich-editor",
+  "version": "1.0.0",
+  "authors": [
+    "S. Francis"
+  ],
+  "description": "Material design tiny-mce web component",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "md",
+    "material design",
+    "rich html editor"
+  ],
+  "main": "rich-editor.html",
+  "license": "MIT",
+  "homepage": "https://github.com/EllipticalElements/rich-editor/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/",
+    ".gitignore",
+    ".npmignore",
+    "gulpfile.js",
+    "lib",
+    "docs",
+    "index.js",
+    "umd.js",
+    "package.json",
+    "demo",
+    "build.json",
+    "bundle.json",
+    ".nvmrc",
+    ".eslintrc",
+    "bin",
+    "CHANGELOG.md",
+    "demos",
+    "stylesheets",
+    "_index.scss",
+    "rich-editor.scss",
+    "bk"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

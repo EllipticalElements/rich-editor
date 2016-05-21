@@ -1,0 +1,328 @@
+rich-editor {
+  display: block;
+  width: 100%;
+  position: relative; }
+  rich-editor:before {
+    font-family: 'material';
+    content: '\e7a3';
+    position: absolute;
+    top: -2px;
+    left: -30px;
+    color: #008d7f;
+    font-size: 24px; }
+  rich-editor.active:before {
+    display: none; }
+
+.mce-tinymce {
+  font-family: 'robotoregular' !important; }
+
+.mce-panel {
+  font-family: 'robotoregular' !important;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  border: 0 !important;
+  border-color: none !important; }
+  .mce-panel .mce-toolbar {
+    box-shadow: none !important; }
+  .mce-panel .mce-toolbar-grp {
+    box-shadow: none !important; }
+  .mce-panel .mce-menu-item:hover, .mce-panel .mce-menu-item.mce-selected, .mce-panel .mce-menu-item:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #008d7f; }
+    .mce-panel .mce-menu-item:hover i, .mce-panel .mce-menu-item.mce-selected i, .mce-panel .mce-menu-item:focus i {
+      color: #fff !important; }
+    .mce-panel .mce-menu-item:hover span, .mce-panel .mce-menu-item.mce-selected span, .mce-panel .mce-menu-item:focus span {
+      color: #fff !important; }
+  .mce-panel .mce-menu-item-sep:hover {
+    background: 0 0;
+    background-color: none; }
+  .mce-panel .mce-menu-item.mce-disabled:hover {
+    background: none; }
+  .mce-panel .mce-menu-item.mce-disabled .mce-text, .mce-panel .mce-menu-item.mce-disabled .mce-ico {
+    color: #adadad !important; }
+  .mce-panel .mce-menu-item.mce-disabled .mce-text, .mce-panel .mce-menu-item.mce-disabled .mce-menu-shortcut {
+    color: #adadad !important; }
+
+.mce-content-body {
+  padding: .25em; }
+
+.mce-edit-focus {
+  outline: 2px dashed #ddd !important; }
+
+.mce-window-head .mce-title {
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  padding-right: 10px;
+  font-family: 'robotomedium'; }
+
+.mce-ico {
+  font-family: 'material' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 24px !important;
+  line-height: 24px !important;
+  speak: none;
+  vertical-align: text-top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  background: transparent center center;
+  background-size: cover;
+  width: 24px !important;
+  height: 24px !important;
+  color: #666 !important; }
+
+.mce-btn-small .mce-ico {
+  font-size: 12px; }
+
+.mce-i-save:before {
+  content: "\e719"; }
+
+.mce-i-newdocument:before {
+  content: "\e616"; }
+
+.mce-i-fullpage:before {
+  content: "\e8ac"; }
+
+.mce-i-alignleft:before {
+  content: "\e785"; }
+
+.mce-i-aligncenter:before {
+  content: "\e783"; }
+
+.mce-i-alignright:before {
+  content: "\e786"; }
+
+.mce-i-alignjustify:before {
+  content: "\e784"; }
+
+.mce-i-alignnone:before {
+  content: "\e820"; }
+
+.mce-i-cut:before {
+  content: "\e706"; }
+
+.mce-i-paste:before {
+  content: "\e707"; }
+
+.mce-i-searchreplace:before {
+  content: "\e62d"; }
+
+.mce-i-bullist:before {
+  content: "\e790"; }
+
+.mce-i-numlist:before {
+  content: "\e791"; }
+
+.mce-i-indent:before {
+  content: "\e78d"; }
+
+.mce-i-outdent:before {
+  content: "\e78c"; }
+
+.mce-i-blockquote:before {
+  content: "\e793"; }
+
+.mce-i-undo:before {
+  content: "\e71e"; }
+
+.mce-i-redo:before {
+  content: "\e712"; }
+
+.mce-i-link:before {
+  content: "\e70f"; }
+
+.mce-i-unlink:before {
+  content: "\e703"; }
+
+.mce-i-anchor:before {
+  content: "\e70f"; }
+
+.mce-i-image:before {
+  content: "\e831"; }
+
+.mce-i-media:before {
+  content: "\e651"; }
+
+.mce-i-help:before {
+  content: "\e633"; }
+
+.mce-i-code:before {
+  content: "\e79b"; }
+
+.mce-i-insertdatetime:before {
+  content: "\e79e"; }
+
+.mce-i-preview:before {
+  content: "\e64a"; }
+
+.mce-i-forecolor:before {
+  content: "\e78b"; }
+
+.mce-i-backcolor:before {
+  content: "\e789"; }
+
+.mce-i-table:before {
+  content: "\e82b"; }
+
+.mce-i-hr:before {
+  content: "\e778"; }
+
+.mce-i-removeformat:before {
+  content: "\e634"; }
+
+.mce-i-subscript:before {
+  content: "\e01e"; }
+
+.mce-i-superscript:before {
+  content: "\e01f"; }
+
+.mce-i-charmap:before {
+  content: "\e020"; }
+
+.mce-i-emoticons:before {
+  content: "\e79d"; }
+
+.mce-i-print:before {
+  content: "\e656"; }
+
+.mce-i-fullscreen:before {
+  content: "\e8ac"; }
+
+.mce-i-spellchecker:before {
+  content: "\e677"; }
+
+.mce-i-nonbreaking:before {
+  content: "\e025"; }
+
+.mce-i-template:before {
+  content: "\e026"; }
+
+.mce-i-pagebreak:before {
+  content: "\e027"; }
+
+.mce-i-restoredraft:before {
+  content: "\e709"; }
+
+.mce-i-untitled:before {
+  content: "\e029"; }
+
+.mce-i-bold:before {
+  content: "\e787"; }
+
+.mce-i-italic:before {
+  content: "\e78e"; }
+
+.mce-i-underline:before {
+  content: "\e798"; }
+
+.mce-i-strikethrough:before {
+  content: "\e795"; }
+
+.mce-i-visualchars:before {
+  content: "\e69c"; }
+
+.mce-i-visualblocks:before {
+  content: "\e69c"; }
+
+.mce-i-ltr:before {
+  content: "\e796"; }
+
+.mce-i-rtl:before {
+  content: "\e797"; }
+
+.mce-i-copy:before {
+  content: "\e705"; }
+
+.mce-i-resize:before {
+  content: "\e732"; }
+
+.mce-i-browse:before {
+  content: "\e647"; }
+
+.mce-i-pastetext:before {
+  content: "\e707"; }
+
+.mce-i-rotateleft:before {
+  content: "\e851"; }
+
+.mce-i-rotateright:before {
+  content: "\e852"; }
+
+.mce-i-crop:before {
+  content: "\e800"; }
+
+.mce-i-editimage:before {
+  content: "\e809"; }
+
+.mce-i-options:before {
+  content: "\ec6a"; }
+
+.mce-i-flipv:before {
+  content: "\e827"; }
+
+.mce-i-fliph:before {
+  content: "\e827"; }
+
+.mce-i-zoomin:before {
+  content: "\e660"; }
+
+.mce-i-zoomout:before {
+  content: "\e660"; }
+
+.mce-i-sun:before {
+  content: "\eccc"; }
+
+.mce-i-moon:before {
+  content: "\eccd"; }
+
+.mce-i-arrowleft:before {
+  content: "\e8a7"; }
+
+.mce-i-arrowright:before {
+  content: "\e8a8"; }
+
+.mce-i-drop:before {
+  content: "\e8a1"; }
+
+.mce-i-contrast:before {
+  content: "\ecd4"; }
+
+.mce-i-sharpen:before {
+  content: "\eba7"; }
+
+.mce-i-palette:before {
+  content: "\e845"; }
+
+.mce-i-resize2:before {
+  content: "\edf9"; }
+
+.mce-i-orientation:before {
+  content: "\e750"; }
+
+.mce-i-invert:before {
+  content: "\e602"; }
+
+.mce-i-gamma:before {
+  content: "\e600"; }
+
+.mce-i-remove:before {
+  content: "\e620"; }
+
+.mce-i-checkbox:before, .mce-i-selected:before {
+  content: "\e8a6"; }
+
+.mce-i-selected {
+  visibility: hidden; }
+
+i.mce-i-backcolor {
+  text-shadow: none;
+  background: #bbb; }
+
+.rich-editor-button {
+  margin-top: 2em; }
+
+.rich-editor-form {
+  padding: 0; }

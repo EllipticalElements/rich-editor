@@ -1,0 +1,72 @@
+<script src="tinymce.min.js"></script>
+<link rel="import" href="../polymer/polymer.html">
+<link rel="stylesheet" href="rich-editor.css">
+<link rel="import" href="editor-skin.html">
+
+<dom-module id="rich-editor">
+    <style>
+        :host{
+            display:block;
+            width:100%;
+            position:relative;
+        }
+    </style>
+    <template>
+        <div id="[[data-id]]" class="rich-editor-element">
+            <content></content>
+        </div>
+    </template>
+</dom-module>
+
+<script>
+
+    Polymer({
+
+        is: 'rich-editor',
+
+        properties: {
+           dataId:{
+               type:String,
+               value:''
+           },
+           plugins:{
+               type:String,
+               value:"advlist autolink lists link image anchor searchreplace insertdatetime media paste textcolor colorpicker"
+           },
+            toolbar:{
+                type:String,
+                value:"undo redo bold italic | alignleft aligncenter alignright alignjustify | bullist numlist link forecolor"
+            }
+        },
+
+        ready:function(){
+           this._setEditor();
+        },
+
+        _setEditor:function(){
+            if(tinymce.editors.length===0){
+                this._initEditor();
+            }else{
+                var id=tinymce.editors[0].id;
+                tinymce.remove('#' + id);
+                this._initEditor();
+            }
+        },
+
+        _initEditor:function(){
+            tinymce.init({
+                selector: ".rich-editor-element",
+                inline: true,
+                browser_spellcheck:true,
+                plugins: [this.plugins],
+                toolbar: this.toolbar
+            });
+        },
+
+        content:function(){
+            return tinyMCE.activeEditor.getContent({format : 'raw'});
+        }
+
+    });
+
+</script>
