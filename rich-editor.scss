@@ -104,85 +104,256 @@ $_back-color:#bbb;
   .mce-btn-small .mce-ico{
     font-size:12px;
   }
-  .mce-i-save:before{content:"\e719"}
-  .mce-i-newdocument:before{content:"\e616"}
-  .mce-i-fullpage:before{content:"\e8ac"}
-  .mce-i-alignleft:before{content:"\e785"}
-  .mce-i-aligncenter:before{content:"\e783"}
-  .mce-i-alignright:before{content:"\e786"}
-  .mce-i-alignjustify:before{content:"\e784"}
-  .mce-i-alignnone:before{content:"\e820"}
-  .mce-i-cut:before{content:"\e706"}
-  .mce-i-paste:before{content:"\e707"}
-  .mce-i-searchreplace:before{content:"\e62d"}
-  .mce-i-bullist:before{content:"\e790"}
-  .mce-i-numlist:before{content:"\e791"}
-  .mce-i-indent:before{content:"\e78d"}
-  .mce-i-outdent:before{content:"\e78c"}
-  .mce-i-blockquote:before{content:"\e793"}
-  .mce-i-undo:before{content:"\e71e"}
-  .mce-i-redo:before{content:"\e712"}
-  .mce-i-link:before{content:"\e70f"}
-  .mce-i-unlink:before{content:"\e703"}
-  .mce-i-anchor:before{content:"\e70f"}
-  .mce-i-image:before{content:"\e831"}
-  .mce-i-media:before{content:"\e651"}
-  .mce-i-help:before{content:"\e633"}
-  .mce-i-code:before{content:"\e79b"}
-  .mce-i-insertdatetime:before{content:"\e79e"}
-  .mce-i-preview:before{content:"\e64a"}
-  .mce-i-forecolor:before{content:"\e78b"}
-  .mce-i-backcolor:before{content:"\e789"}
-  .mce-i-table:before{content:"\e82b"}
-  .mce-i-hr:before{content:"\e778"}
-  .mce-i-removeformat:before{content:"\e634"}
-  .mce-i-subscript:before{content:"\e01e"}
-  .mce-i-superscript:before{content:"\e01f"}
-  .mce-i-charmap:before{content:"\e020"}
-  .mce-i-emoticons:before{content:"\e79d"}
-  .mce-i-print:before{content:"\e656"}
-  .mce-i-fullscreen:before{content:"\e8ac"}
-  .mce-i-spellchecker:before{content:"\e677"}
-  .mce-i-nonbreaking:before{content:"\e025"}
-  .mce-i-template:before{content:"\e026"}
-  .mce-i-pagebreak:before{content:"\e027"}
-  .mce-i-restoredraft:before{content:"\e709"}
-  .mce-i-untitled:before{content:"\e029"}
-  .mce-i-bold:before{content:"\e787"}
-  .mce-i-italic:before{content:"\e78e"}
-  .mce-i-underline:before{content:"\e798"}
-  .mce-i-strikethrough:before{content:"\e795"}
-  .mce-i-visualchars:before{content:"\e69c"}
-  .mce-i-visualblocks:before{content:"\e69c"}
-  .mce-i-ltr:before{content:"\e796"}
-  .mce-i-rtl:before{content:"\e797"}
-  .mce-i-copy:before{content:"\e705"}
-  .mce-i-resize:before{content:"\e732"}
-  .mce-i-browse:before{content:"\e647"}
-  .mce-i-pastetext:before{content:"\e707"}
-  .mce-i-rotateleft:before{content:"\e851"}
-  .mce-i-rotateright:before{content:"\e852"}
-  .mce-i-crop:before{content:"\e800"}
-  .mce-i-editimage:before{content:"\e809"}
-  .mce-i-options:before{content:"\ec6a"}
-  .mce-i-flipv:before{content:"\e827"}
-  .mce-i-fliph:before{content:"\e827"}
-  .mce-i-zoomin:before{content:"\e660"}
-  .mce-i-zoomout:before{content:"\e660"}
-  .mce-i-sun:before{content:"\eccc"}
-  .mce-i-moon:before{content:"\eccd"}
-  .mce-i-arrowleft:before{content:"\e8a7"}
-  .mce-i-arrowright:before{content:"\e8a8"}
-  .mce-i-drop:before{content:"\e8a1"}
-  .mce-i-contrast:before{content:"\ecd4"}
-  .mce-i-sharpen:before{content:"\eba7"}
-  .mce-i-palette:before{content:"\e845"}
-  .mce-i-resize2:before{content:"\edf9"}
-  .mce-i-orientation:before{content:"\e750"}
-  .mce-i-invert:before{content:"\e602"}
-  .mce-i-gamma:before{content:"\e600"}
-  .mce-i-remove:before{content:"\e620"}
-  .mce-i-checkbox:before,.mce-i-selected:before{content:"\e8a6"}
+
+  .mce-i-save:before {
+    content: "\eb86"; }
+
+  .mce-i-newdocument:before {
+    content: "\e943"; }
+
+  .mce-i-fullpage:before {
+    content: "\ea5d"; }
+
+  .mce-i-alignleft:before {
+    content: "\ea42"; }
+
+  .mce-i-aligncenter:before {
+    content: "\ea40"; }
+
+  .mce-i-alignright:before {
+    content: "\ea43"; }
+
+  .mce-i-alignjustify:before {
+    content: "\ea41"; }
+
+  .mce-i-alignnone:before {
+    content: "\ea2a"; }
+
+  .mce-i-cut:before {
+    content: "\e9b4"; }
+
+  .mce-i-paste:before {
+    content: "\e9b5"; }
+
+  .mce-i-searchreplace:before {
+    content: "\ea2e"; }
+
+  .mce-i-bullist:before {
+    content: "\ea4d"; }
+
+  .mce-i-numlist:before {
+    content: "\ea4e"; }
+
+  .mce-i-indent:before {
+    content: "\ea4a"; }
+
+  .mce-i-outdent:before {
+    content: "\ea49"; }
+
+  .mce-i-blockquote:before {
+    content: "\ea50"; }
+
+  .mce-i-undo:before {
+    content: "\ec10"; }
+
+  .mce-i-redo:before {
+    content: "\eb67"; }
+
+  .mce-i-link:before {
+    content: "\ea96"; }
+
+  .mce-i-unlink:before {
+    content: "\e94d"; }
+
+  .mce-i-anchor:before {
+    content: "\ea96"; }
+
+  .mce-i-image:before {
+    content: "\ea89"; }
+
+  .mce-i-media:before {
+    content: "\ec1c"; }
+
+  .mce-i-help:before {
+    content: "\ea7c"; }
+
+  .mce-i-code:before {
+    content: "\e9a6"; }
+
+  .mce-i-insertdatetime:before {
+    content: "\e9f9"; }
+
+  .mce-i-date:before {
+    content: "\e9f9"; }
+
+  .mce-i-preview:before {
+    content: "\eb19"; }
+
+  .mce-i-forecolor:before {
+    content: "\ea48"; }
+
+  .mce-i-backcolor:before {
+    content: "\ea46"; }
+
+  .mce-i-table:before {
+    content: "\ea6f"; }
+
+  .mce-i-hr:before {
+    content: "\e95a"; }
+
+  .mce-i-removeformat:before {
+    content: "\ea80"; }
+
+  .mce-i-subscript:before {
+    content: "\ea06"; }
+
+  .mce-i-superscript:before {
+    content: "\ea07"; }
+
+  .mce-i-charmap:before {
+    content: "\eae6"; }
+
+  .mce-i-emoticons:before {
+    content: "\ea95"; }
+
+  .mce-i-print:before {
+    content: "\ead2"; }
+
+  .mce-i-none:before {
+    content: "\ea2a"; }
+
+  .mce-i-selectall:before {
+    content: "\eb91"; }
+
+  .mce-i-fullscreen:before {
+    content: "\ea5d"; }
+
+  .mce-i-spellchecker:before {
+    content: "\ebcb"; }
+
+  .mce-i-nonbreaking:before {
+    content: "\eab8"; }
+
+  .mce-i-template:before {
+    content: "\eaae"; }
+
+  .mce-i-pagebreak:before {
+    content: "\e92e"; }
+
+  .mce-i-restoredraft:before {
+    content: "\eb7a"; }
+
+  .mce-i-untitled:before {
+    content: "\ebfc"; }
+
+  .mce-i-bold:before {
+    content: "\ea44"; }
+
+  .mce-i-italic:before {
+    content: "\ea4b"; }
+
+  .mce-i-underline:before {
+    content: "\ea56"; }
+
+  .mce-i-strikethrough:before {
+    content: "\ea53"; }
+
+  .mce-i-visualchars:before {
+    content: "\eb6c"; }
+
+  .mce-i-visualblocks:before {
+    content: "\eb6c"; }
+
+  .mce-i-ltr:before {
+    content: "\ea54"; }
+
+  .mce-i-rtl:before {
+    content: "\ea55"; }
+
+  .mce-i-copy:before {
+    content: "\e9b3"; }
+
+  .mce-i-resize:before {
+    content: "\eb44"; }
+
+  .mce-i-browse:before {
+    content: "\eb16"; }
+
+  .mce-i-pastetext:before {
+    content: "\e9b5"; }
+
+  .mce-i-rotateleft:before {
+    content: "\eb7e"; }
+
+  .mce-i-rotateright:before {
+    content: "\eb7f"; }
+
+  .mce-i-crop:before {
+    content: "\e9bb"; }
+
+  .mce-i-editimage:before {
+    content: "\eb44"; }
+
+  .mce-i-options:before {
+    content: "\eae9"; }
+
+  .mce-i-flipv:before {
+    content: "\ea38"; }
+
+  .mce-i-fliph:before {
+    content: "\ea3a"; }
+
+  .mce-i-zoomin:before {
+    content: "\ec4a"; }
+
+  .mce-i-zoomout:before {
+    content: "\ec4b"; }
+
+  .mce-i-sun:before {
+    content: "\e966"; }
+
+  .mce-i-moon:before {
+    content: "\e967"; }
+
+  .mce-i-arrowleft:before {
+    content: "\e92d"; }
+
+  .mce-i-arrowright:before {
+    content: "\e932"; }
+
+  .mce-i-drop:before {
+    content: "\eb4a"; }
+
+  .mce-i-contrast:before {
+    content: "\e96a"; }
+
+  .mce-i-sharpen:before {
+    content: "\e917"; }
+
+  .mce-i-palette:before {
+    content: "\e9a9"; }
+
+  .mce-i-resize2:before {
+    content: "\e9bb"; }
+
+  .mce-i-orientation:before {
+    content: "\eb8c"; }
+
+  .mce-i-invert:before {
+    content: "\ea97"; }
+
+  .mce-i-gamma:before {
+    content: "\ea47"; }
+
+  .mce-i-remove:before {
+    content: "\e9ca"; }
+
+  .mce-i-checkbox:before{
+    content: "\e995"; }
+
+  .mce-i-selected:before {
+    content: "\ebea";
+  }
 
   .mce-i-selected{
     visibility:hidden;
