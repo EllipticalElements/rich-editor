@@ -4,7 +4,7 @@ rich-editor {
   position: relative; }
   rich-editor:before {
     font-family: 'material';
-    content: '\e7a3';
+    content: '\e9b8';
     position: absolute;
     top: -2px;
     left: -30px;
@@ -13,8 +13,14 @@ rich-editor {
   rich-editor.active:before {
     display: none; }
 
+
 .mce-tinymce {
   font-family: 'robotoregular' !important; }
+
+
+.mce-panel .mce-preview{
+  display:none !important;
+}
 
 .mce-panel {
   font-family: 'robotoregular' !important;
@@ -30,24 +36,24 @@ rich-editor {
     color: #fff;
     background-color: #008d7f; }
     .mce-panel .mce-menu-item:hover i, .mce-panel .mce-menu-item.mce-selected i, .mce-panel .mce-menu-item:focus i {
-      color: #fff !important; }
+      color: #fff; }
     .mce-panel .mce-menu-item:hover span, .mce-panel .mce-menu-item.mce-selected span, .mce-panel .mce-menu-item:focus span {
-      color: #fff !important; }
+      color: #fff; }
   .mce-panel .mce-menu-item-sep:hover {
     background: 0 0;
     background-color: none; }
   .mce-panel .mce-menu-item.mce-disabled:hover {
     background: none; }
   .mce-panel .mce-menu-item.mce-disabled .mce-text, .mce-panel .mce-menu-item.mce-disabled .mce-ico {
-    color: #adadad !important; }
+    color: #adadad; }
   .mce-panel .mce-menu-item.mce-disabled .mce-text, .mce-panel .mce-menu-item.mce-disabled .mce-menu-shortcut {
-    color: #adadad !important; }
+    color: #adadad; }
 
 .mce-content-body {
   padding: .25em; }
 
 .mce-edit-focus {
-  outline: 2px dashed #ddd !important; }
+  outline: 2px dashed #ddd; }
 
 .mce-window-head .mce-title {
   line-height: 20px;
@@ -72,247 +78,260 @@ rich-editor {
   background-size: cover;
   width: 24px !important;
   height: 24px !important;
-  color: #666 !important; }
+  color: #666; }
 
 .mce-btn-small .mce-ico {
   font-size: 12px; }
 
 .mce-i-save:before {
-  content: "\e719"; }
+  content: "\eb86"; }
 
 .mce-i-newdocument:before {
-  content: "\e616"; }
+  content: "\e943"; }
 
 .mce-i-fullpage:before {
-  content: "\e8ac"; }
+  content: "\ea5d"; }
 
 .mce-i-alignleft:before {
-  content: "\e785"; }
+  content: "\ea42"; }
 
 .mce-i-aligncenter:before {
-  content: "\e783"; }
+  content: "\ea40"; }
 
 .mce-i-alignright:before {
-  content: "\e786"; }
+  content: "\ea43"; }
 
 .mce-i-alignjustify:before {
-  content: "\e784"; }
+  content: "\ea41"; }
 
 .mce-i-alignnone:before {
-  content: "\e820"; }
+  content: "\ea2a"; }
 
 .mce-i-cut:before {
-  content: "\e706"; }
+  content: "\e9b4"; }
 
 .mce-i-paste:before {
-  content: "\e707"; }
+  content: "\e9b5"; }
 
 .mce-i-searchreplace:before {
-  content: "\e62d"; }
+  content: "\ea2e"; }
 
 .mce-i-bullist:before {
-  content: "\e790"; }
+  content: "\ea4d"; }
 
 .mce-i-numlist:before {
-  content: "\e791"; }
+  content: "\ea4e"; }
 
 .mce-i-indent:before {
-  content: "\e78d"; }
+  content: "\ea4a"; }
 
 .mce-i-outdent:before {
-  content: "\e78c"; }
+  content: "\ea49"; }
 
 .mce-i-blockquote:before {
-  content: "\e793"; }
+  content: "\ea50"; }
 
 .mce-i-undo:before {
-  content: "\e71e"; }
+  content: "\ec10"; }
 
 .mce-i-redo:before {
-  content: "\e712"; }
+  content: "\eb67"; }
 
 .mce-i-link:before {
-  content: "\e70f"; }
+  content: "\ea96"; }
 
 .mce-i-unlink:before {
-  content: "\e703"; }
+  content: "\e94d"; }
 
 .mce-i-anchor:before {
-  content: "\e70f"; }
+  content: "\ea96"; }
 
 .mce-i-image:before {
-  content: "\e831"; }
+  content: "\ea89"; }
 
 .mce-i-media:before {
-  content: "\e651"; }
+  content: "\ec1c"; }
 
 .mce-i-help:before {
-  content: "\e633"; }
+  content: "\ea7c"; }
 
 .mce-i-code:before {
-  content: "\e79b"; }
+  content: "\e9a6"; }
 
 .mce-i-insertdatetime:before {
-  content: "\e79e"; }
+  content: "\e9f9"; }
+
+.mce-i-date:before {
+  content: "\e9f9"; }
 
 .mce-i-preview:before {
-  content: "\e64a"; }
+  content: "\eb19"; }
 
 .mce-i-forecolor:before {
-  content: "\e78b"; }
+  content: "\ea48"; }
 
 .mce-i-backcolor:before {
-  content: "\e789"; }
+  content: "\ea46"; }
 
 .mce-i-table:before {
-  content: "\e82b"; }
+  content: "\ea6f"; }
 
 .mce-i-hr:before {
-  content: "\e778"; }
+  content: "\e95a"; }
 
 .mce-i-removeformat:before {
-  content: "\e634"; }
+  content: "\ea80"; }
 
 .mce-i-subscript:before {
-  content: "\e01e"; }
+  content: "\ea06"; }
 
 .mce-i-superscript:before {
-  content: "\e01f"; }
+  content: "\ea07"; }
 
 .mce-i-charmap:before {
-  content: "\e020"; }
+  content: "\eae6"; }
 
 .mce-i-emoticons:before {
-  content: "\e79d"; }
+  content: "\ea95"; }
 
 .mce-i-print:before {
-  content: "\e656"; }
+  content: "\ead2"; }
+
+.mce-i-none:before {
+  content: "\ea2a"; }
+
+.mce-i-selectall:before {
+  content: "\eb91"; }
 
 .mce-i-fullscreen:before {
-  content: "\e8ac"; }
+  content: "\ea5d"; }
 
 .mce-i-spellchecker:before {
-  content: "\e677"; }
+  content: "\ebcb"; }
 
 .mce-i-nonbreaking:before {
-  content: "\e025"; }
+  content: "\eab8"; }
 
 .mce-i-template:before {
-  content: "\e026"; }
+  content: "\eaae"; }
 
 .mce-i-pagebreak:before {
-  content: "\e027"; }
+  content: "\e92e"; }
 
 .mce-i-restoredraft:before {
-  content: "\e709"; }
+  content: "\eb7a"; }
 
 .mce-i-untitled:before {
-  content: "\e029"; }
+  content: "\ebfc"; }
 
 .mce-i-bold:before {
-  content: "\e787"; }
+  content: "\ea44"; }
 
 .mce-i-italic:before {
-  content: "\e78e"; }
+  content: "\ea4b"; }
 
 .mce-i-underline:before {
-  content: "\e798"; }
+  content: "\ea56"; }
 
 .mce-i-strikethrough:before {
-  content: "\e795"; }
+  content: "\ea53"; }
 
 .mce-i-visualchars:before {
-  content: "\e69c"; }
+  content: "\eb6c"; }
 
 .mce-i-visualblocks:before {
-  content: "\e69c"; }
+  content: "\eb6c"; }
 
 .mce-i-ltr:before {
-  content: "\e796"; }
+  content: "\ea54"; }
 
 .mce-i-rtl:before {
-  content: "\e797"; }
+  content: "\ea55"; }
 
 .mce-i-copy:before {
-  content: "\e705"; }
+  content: "\e9b3"; }
 
 .mce-i-resize:before {
-  content: "\e732"; }
+  content: "\eb44"; }
 
 .mce-i-browse:before {
-  content: "\e647"; }
+  content: "\eb16"; }
 
 .mce-i-pastetext:before {
-  content: "\e707"; }
+  content: "\e9b5"; }
 
 .mce-i-rotateleft:before {
-  content: "\e851"; }
+  content: "\eb7e"; }
 
 .mce-i-rotateright:before {
-  content: "\e852"; }
+  content: "\eb7f"; }
 
 .mce-i-crop:before {
-  content: "\e800"; }
+  content: "\e9bb"; }
 
 .mce-i-editimage:before {
-  content: "\e809"; }
+  content: "\eb44"; }
 
 .mce-i-options:before {
-  content: "\ec6a"; }
+  content: "\eae9"; }
 
 .mce-i-flipv:before {
-  content: "\e827"; }
+  content: "\ea38"; }
 
 .mce-i-fliph:before {
-  content: "\e827"; }
+  content: "\ea3a"; }
 
 .mce-i-zoomin:before {
-  content: "\e660"; }
+  content: "\ec4a"; }
 
 .mce-i-zoomout:before {
-  content: "\e660"; }
+  content: "\ec4b"; }
 
 .mce-i-sun:before {
-  content: "\eccc"; }
+  content: "\e966"; }
 
 .mce-i-moon:before {
-  content: "\eccd"; }
+  content: "\e967"; }
 
 .mce-i-arrowleft:before {
-  content: "\e8a7"; }
+  content: "\e92d"; }
 
 .mce-i-arrowright:before {
-  content: "\e8a8"; }
+  content: "\e932"; }
 
 .mce-i-drop:before {
-  content: "\e8a1"; }
+  content: "\eb4a"; }
 
 .mce-i-contrast:before {
-  content: "\ecd4"; }
+  content: "\e96a"; }
 
 .mce-i-sharpen:before {
-  content: "\eba7"; }
+  content: "\e917"; }
 
 .mce-i-palette:before {
-  content: "\e845"; }
+  content: "\e9a9"; }
 
 .mce-i-resize2:before {
-  content: "\edf9"; }
+  content: "\e9bb"; }
 
 .mce-i-orientation:before {
-  content: "\e750"; }
+  content: "\eb8c"; }
 
 .mce-i-invert:before {
-  content: "\e602"; }
+  content: "\ea97"; }
 
 .mce-i-gamma:before {
-  content: "\e600"; }
+  content: "\ea47"; }
 
 .mce-i-remove:before {
-  content: "\e620"; }
+  content: "\e9ca"; }
 
-.mce-i-checkbox:before, .mce-i-selected:before {
-  content: "\e8a6"; }
+.mce-i-checkbox:before{
+  content: "\e995"; }
+
+.mce-i-selected:before {
+  content: "\ebea";
+}
 
 .mce-i-selected {
   visibility: hidden; }

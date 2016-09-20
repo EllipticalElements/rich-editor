@@ -1,72 +1,267 @@
 <script src="tinymce.min.js"></script>
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../elliptical-polymer-behaviors/component-behavior.html">
+<link rel="import" href="../elliptical-mutation-summary/elliptical-mutation-summary.html">
 <link rel="stylesheet" href="rich-editor.css">
 <link rel="import" href="editor-skin.html">
 
+<!--
+ css variables
+  --rich-editor-fore-color:#fff
+  --rich-editor-color: #008d7f
+  --rich-editor-icon-color: #666
+  --rich-editor-icon-disabled-color: #adadad
+  --rich-editor-icon-hover-disabled-color: rgba(255, 255, 255, .2)
+  --rich-editor-edit-icon-color: #ccc
+  --rich-editor-outline-focus: 2px dashed #ddd
+  --rich-editor-mobile-outline-focus, 2px dashed #ddd
+  --rich-editor-min-height, 150px
+
+-->
+<style is="custom-style">
+  .mce-panel .mce-menu-item:hover, .mce-panel .mce-menu-item.mce-selected, .mce-panel .mce-menu-item:focus {
+    color: var(--rich-editor-fore-color, #fff);
+    background-color: var(--rich-editor-color, #008d7f);
+  }
+
+  .mce-menu-item-normal.mce-active {
+    background-color: var(--rich-editor-color, #008d7f);
+  }
+
+  .mce-ico {
+    color: var(--rich-editor-icon-color, #666);
+  }
+
+  .mce-panel .mce-menu-item.mce-disabled .mce-text, .mce-panel .mce-menu-item.mce-disabled .mce-ico {
+    color: var(--rich-editor-icon-disabled-color, #adadad);
+  }
+
+  .mce-panel [aria-disabled=true]:hover * {
+    color: var(--rich-editor-icon-hover-disabled-color, rgba(255, 255, 255, .2)) !important;
+  }
+
+</style>
 <dom-module id="rich-editor">
-    <style>
-        :host{
-            display:block;
-            width:100%;
-            position:relative;
-        }
-    </style>
-    <template>
-        <div id="[[data-id]]" class="rich-editor-element">
-            <content></content>
-        </div>
-    </template>
+  <style>
+    :host {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+    :host:before {
+      color: var(--rich-editor-edit-icon-color, #ccc);;
+    }
+    :host.hide-icon:before{
+      content:'' !important;
+    }
+    :host.on-focus:before {
+      color: var(--rich-editor-color, #008d7f);
+    }
+    :host.no-padding .mce-content-body{
+      padding:0;
+    }
+    :host .mce-edit-focus {
+      outline:  var(--rich-editor-outline-focus, 2px dashed #ddd) !important;
+    }
+    :host .rich-editor-element{
+      min-height:var(--rich-editor-min-height, 150px);
+    }
+    @media only screen and (max-width: 1024px) and (min-width: 220px) {
+      :host:before{
+        content:'';
+      }
+      :host.hide-icon .rich-editor-element{
+        outline:0 !important;
+      }
+      :host .rich-editor-element{
+        outline:  var(--rich-editor-outline-focus, 2px dashed #ddd) !important;
+      }
+      :host.on-focus .rich-editor-element{
+        outline:  var(--rich-editor-mobile-outline-focus, 2px dashed #ddd) !important;
+      }
+    }
+  </style>
+  <template>
+    <div id="[[data-id]]" class="rich-editor-element">
+      <content></content>
+    </div>
+  </template>
 </dom-module>
 
 <script>
 
-    Polymer({
+  Polymer({
 
-        is: 'rich-editor',
+    is: 'rich-editor',
 
-        properties: {
-           dataId:{
-               type:String,
-               value:''
-           },
-           plugins:{
-               type:String,
-               value:"advlist autolink lists link image anchor searchreplace insertdatetime media paste textcolor colorpicker"
-           },
-            toolbar:{
-                type:String,
-                value:"undo redo bold italic | alignleft aligncenter alignright alignjustify | bullist numlist link forecolor"
-            }
-        },
+    behaviors:[Elliptical.ComponentBehavior],
 
-        ready:function(){
-           this._setEditor();
-        },
+    properties: {
+      dataId: {
+        type: String,
+        value: ''
+      },
+      plugins: {
+        type: String,
+        value: "advlist autolink lists link image anchor searchreplace insertdatetime media paste textcolor colorpicker code"
+      },
+      toolbar: {
+        type: String,
+        value: "undo redo bold italic | alignleft aligncenter alignright alignjustify | bullist numlist link forecolor"
+      },
+      mobilePlugins:{
+        type:String,
+        value:"anchor searchreplace media paste textcolor colorpicker"
+      },
+      mobileToolbar:{
+        type:String,
+        value:"undo redo bold italic | link forecolor"
+      },
+      disableOnload: {
+        type: Boolean,
+        value: false
+      },
+      _enabled:{
+        type:Boolean,
+        value:false
+      },
+      _active:{
+        type:Boolean,
+        value:false
+      },
+      _eventId:{
+        type:String,
+        value:null
+      }
+    },
 
-        _setEditor:function(){
-            if(tinymce.editors.length===0){
-                this._initEditor();
-            }else{
-                var id=tinymce.editors[0].id;
-                tinymce.remove('#' + id);
-                this._initEditor();
-            }
-        },
+    ready: function () {
+      if(!this.disableOnload){
+        this._active=true;
+        this._setEditor();
+      }
+      this._setObserver();
+      this._events();
+    },
 
-        _initEditor:function(){
-            tinymce.init({
-                selector: ".rich-editor-element",
-                inline: true,
-                browser_spellcheck:true,
-                plugins: [this.plugins],
-                toolbar: this.toolbar
-            });
-        },
+    _onMutation:function(event,summary){
+      var self=this;
+      if(!this._active) return;
+      var changed=summary.attributeChanged;
+      if(changed && changed.class){
+        var changedClass=changed.class;
+        changedClass.forEach(function(element){
+          if(element.classList.contains('rich-editor-element')) self._setFocusState(element);
+        });
+      }
+    },
 
-        content:function(){
-            return tinyMCE.activeEditor.getContent({format : 'raw'});
-        }
+    _setEditor: function () {
+      this._enabled=true;
+      this.showIcon();
+      if (tinymce.editors.length === 0) {
+        this._initEditor();
+      } else {
+        var id = tinymce.editors[0].id;
+        tinymce.remove('#' + id);
+        this._initEditor();
+      }
+    },
 
-    });
+    _events:function(){
+      var id=elliptical.utils.random.id(6);
+      this._eventId=id;
+      $(document).on('OnDocumentMutation.' + id,this._onMutation.bind(this));
+    },
+
+    _initEditor: function () {
+      var plugins=this.plugins;
+      var toolbar=this.toolbar;
+      if(this._mq.smartphone){
+        plugins=this.mobilePlugins;
+        toolbar=this.mobileToolbar;
+      }
+      this._enabled=true;
+      tinymce.init({
+        selector: ".rich-editor-element",
+        inline: true,
+        browser_spellcheck: true,
+        plugins: [plugins],
+        toolbar: toolbar,
+        media_live_embeds: true
+      });
+    },
+
+    _setFocusState:function(element){
+      if(element.classList.contains('mce-edit-focus')) {
+        this.classList.add('on-focus');
+      } else this.classList.remove('on-focus');
+    },
+
+    _setObserver:function(){
+      var Observer=elliptical.mutation.summary;
+      Observer.connect();
+    },
+
+    _getId:function(){
+       var element=this.querySelector('.rich-editor-element');
+       return element.getAttribute('id');
+    },
+
+    _toggle:function(){
+      tinymce.EditorManager.execCommand('mceToggleEditor', true, this._getId());
+    },
+
+    content: function () {
+      try{
+        return tinyMCE.activeEditor.getContent({format : 'raw'});
+      }catch(ex){
+        var element=this.querySelector('.rich-editor-element');
+        return element.innerHTML;
+      }
+    },
+
+    setContent:function(content){
+      try{
+        tinyMCE.activeEditor.setContent(content,{format : 'raw'});
+      }catch(ex){
+        var element=this.querySelector('.rich-editor-element');
+        element.innerHTML=content;
+      }
+    },
+
+    disable:function(){
+      if(!this._enabled) return;
+      if(this._active){
+        this._active=false;
+        this._toggle();
+        this.hideIcon();
+      }
+    },
+
+    enable:function(){
+      if(this._active) return;
+      else this._active=true;
+      if(this._enabled){
+        this._toggle();
+        this.showIcon();
+      }
+      else this._setEditor();
+
+    },
+
+    showIcon:function(){
+      this.classList.remove('hide-icon');
+    },
+
+    hideIcon:function(){
+      this.classList.add('hide-icon');
+    },
+
+    detached:function(){
+      $(document).off('OnDocumentMutation.' + this._eventId);
+    }
+
+  });
 
 </script>
